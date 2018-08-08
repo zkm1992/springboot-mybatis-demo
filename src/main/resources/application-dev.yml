@@ -1,0 +1,38 @@
+server:
+  port: 8888 # 端口号
+  context-path: /winter-dev # 项目访问路径
+
+spring:
+  datasource:
+    name: test
+    url: jdbc:mysql://120.55.190.246:3306/test
+    username: bz_user
+    password: m.bz365.com
+    type: com.alibaba.druid.pool.DruidDataSource
+    filters: stat
+    tomcat:
+      max-active: 20
+      initial-size: 1
+      max-wait: 60000
+      min-idle: 1
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: select 'x'
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+    dbcp2:
+      pool-prepared-statements: true
+      max-open-prepared-statements: 20
+
+# 该配置节点为独立的节点，有很多同学容易将这个配置放在spring的节点下，导致配置无法被识别
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+  type-aliases-package: com.winter.model
+
+# pageHelper分页插件
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countsql

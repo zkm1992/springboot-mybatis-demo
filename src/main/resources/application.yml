@@ -1,0 +1,7 @@
+spring:
+  profiles:
+    active: dev # 配置文件级别 对应resources下的application-dev.yml和application-prod.yml分三个级别(test, dev, prod)
+
+logging:
+  level:
+    com.winter.mapper: trace # 控制台打印SQL com.winter.mapper是mybatis的mapper接口文件
