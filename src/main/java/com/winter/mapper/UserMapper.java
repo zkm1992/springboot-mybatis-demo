@@ -17,5 +17,10 @@ public interface UserMapper {
 
     int updateByPrimaryKey(User record);
 
+    /**
+     * 查询全部用户
+     *
+     * @return
+     */
     List<User> getAllUser();
 }
