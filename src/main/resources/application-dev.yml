@@ -1,6 +1,6 @@
 server:
-  port: 8888 # 端口号
-  context-path: /winter-dev # 项目访问路径
+  port: 9999 # 端口号
+  context-path: /winter # 项目访问路径
 
 spring:
   datasource:
@@ -36,3 +36,6 @@ pagehelper:
   reasonable: true
   support-methods-arguments: true
   params: count=countsql
+
+logging:
+  file: springboot.log
